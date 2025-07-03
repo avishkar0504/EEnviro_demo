@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Personnel - Excellent Enviro - Environmental Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for Key Personnel Card */
+        .key-personnel-card {
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+
+        .person-photo-circle {
+            width: 120px; /* Increased size for prominence */
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0; /* Prevent shrinking when text is long */
+            border: 4px solid var(--dark-green); /* Example border */
+            box-shadow: 0 0 10px rgba(0,0,0,0.15); /* Subtle shadow around photo */
+        }
+
+        .person-photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the circle without distortion */
+        }
+
+        .bg-light-green {
+            background-color: #f0fff0; /* A lighter shade of green for the right panel */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .key-personnel-card .card-text.small {
+            font-size: 0.88em; /* Adjusted font size for detailed experience */
+            line-height: 1.6;
+        }
+
+        .key-personnel-card .card-title {
+            font-size: 2.2em; /* Larger name */
+            font-weight: 800;
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+
+        .key-personnel-card .text-muted {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #666 !important;
+        }
+
+        .key-personnel-card .fw-bold {
+            font-size: 1.05em;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .key-personnel-card .rounded-end {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .key-personnel-card .row.g-0 > div {
+                padding: 20px !important; /* Adjust padding on smaller screens */
+            }
+            .key-personnel-card .col-md-4 {
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 15px;
+                order: -1; /* Puts the image column on top for mobile */
+            }
+            .key-personnel-card .col-md-8 {
+                text-align: center;
+            }
+            .key-personnel-card .d-flex.align-items-center {
+                flex-direction: column;
+                text-align: center;
+            }
+            .key-personnel-card .person-photo-circle {
+                margin-right: 0 !important;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading-overlay">
+        <div class="tree-loader">
+            </div>
+    </div>
+
+    <header class="bg-white py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Excellent Enviro Logo" height="50">
+            </a>
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" aria-current="page" href="about-excellent-enviro.html" id="navbarDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                                <li><a class="dropdown-item" href="about-excellent-enviro.html">About Excellent Enviro</a></li>
+                                <li><a class="dropdown-item" href="achievements.html">Achievements</a></li>
+                                <li><a class="dropdown-item" href="environmental-philosophy.html">Environmental Philosophy</a></li>
+                                <li><a class="dropdown-item" href="our-activities.html">Our Activities</a></li>
+                                <li><a class="dropdown-item" href="area-of-application.html">Area of Application</a></li>
+                                <li><a class="dropdown-item" href="why-we.html">Why We</a></li>
+                                <li><a class="dropdown-item active" aria-current="page" href="key-personnel.html">Key Personnel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products & Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                                <li class="dropdown-submenu dropend">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownTurnkey" role="button" data-bs-toggle="dropdown" aria-expanded="false">Turnkey Projects</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownTurnkey">
+                                        <li><a class="dropdown-item" href="turnkey-etp-stp.html">ETP & STP</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-uasb.html">UASB Process</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-zero-discharge.html">Zero Discharge Project</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-engineering-management.html">Engineering Management and Plant Operation Services</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-eia-clearance.html">Environmental Clearance & EIA</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-environmental-statement.html">Environmental Statement</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-dm-plant.html">DM Plant</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-ro-plant.html">RO Plant</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-water-treatment.html">Water Treatment</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-air-pollution.html">Air Pollution</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-particulate-removal.html">Particulate Removal</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-special-system.html">Special System</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-hazardous-waste-incineration.html">Hazardous Waste Incineration</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-pre-fab-treatment-plant.html">Pre-Fab Treatment Plant</a></li>
+                                        <li><a class="dropdown-item" href="turnkey-tertiary-treatment-plant.html">Tertiary Treatment Plant</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="detailed-engineering-projects.html">Detailed Engineering Projects</a></li>
+                                <li><a class="dropdown-item" href="environmental-analytical-services.html">Environmental Analytical Services</a></li>
+                                <li><a class="dropdown-item" href="operation-maintenance-etp-stp-cetp.html">Operation and Maintenance & ETP/STP/CETP</a></li>
+                                <li><a class="dropdown-item" href="environmental-services.html">Environmental Services</a></li>
+                                <li><a class="dropdown-item" href="hazardous-waste-transport-services.html">Hazardous Waste Transport Services</a></li>
+                                <li><a class="dropdown-item" href="training-services.html">Training Services</a></li>
+                                <li><a class="dropdown-item" href="other-services.html">Other Services</a></li>
+                                <li><a class="dropdown-item" href="online-monitoring-system.html">Online Monitoring System</a></li>
+                                <li><a class="dropdown-item" href="sustainability-development.html">Sustainability Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="clients.html">Clients</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reach-us.html">Reach Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <a href="pdf/company-profile.pdf" target="_blank" class="btn btn-dark-green rounded-pill px-4">Company Profile</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container" data-aos="fade-up">
+                <h1 class="display-3">Key Personnel</h1>
+                <p class="lead">Meet the experienced leaders driving "Excellent Enviro" towards a sustainable future.</p>
+            </div>
+        </section>
+
+        <section class="container content-section my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="card key-personnel-card shadow-lg mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row g-0">
+                            <div class="col-md-8 p-4">
+                                <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4 text-center text-md-start">
+                                    <div class="person-photo-circle me-md-4 mb-3 mb-md-0">
+                                        <img src="images/placeholder-director.jpg" alt="Director's Photo" class="img-fluid">
+                                    </div>
+                                    <div>
+                                        <h3 class="card-title mb-0">Mr. Subhash Mudgadkar<h3>
+                                        <p class="text-muted mb-0">Director</p>
+                                    </div>
+                                </div>
+                                <p class="fw-bold mb-1">Qualifications:</p>
+                                <p class="card-text small mb-3">M. Sc. (Environmental Science), Adv. Dip. In Industrial Safety</p>
+                                <p class="fw-bold mb-1">Experience:</p>
+                                <p class="card-text small text-justify">
+                                    More than 22 Years of experience on various key projects including more than 17 years as Operations’ Manager of two CETPs, Designing/Installations of STPs/ETPs, RO, Procurement, Environmental Clearances, Consent and other statutory requirements, Designing of STP, ETP,RO, CETP, Biogas & power generation plants, Detailed Engineering, Project planning, monitoring & coordination, Technical backup to proposal team – Process & costing, Research and Development for various waste water degradations, Coordination of commissioning activity, Hazardous and Solid waste management.
+                                </p>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center justify-content-center bg-light-green rounded-end">
+                                <img src="images/environmental-icon-placeholder.jpg" alt="Environmental Icon" class="img-fluid w-170 p-5 h-195">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark-green text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="products-services.html" class="text-white text-decoration-none">Turnkey Projects</a></li>
+                        <li><a href="environmental-analytical-services.html" class="text-white text-decoration-none">Environmental Analytical Services</a></li>
+                        <li><a href="online-monitoring-system.html" class="text-white text-decoration-none">Online Monitoring System</a></li>
+                        <li><a href="sustainability-development.html" class="text-white text-decoration-none">Sustainability Development</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>Excellent Enviro is committed to environmental excellence, delivering innovative and sustainable solutions across various sectors. <a href="about-excellent-enviro.html" class="text-white text-decoration-none fw-bold">Read More</a></p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3"><a href="#" class="text-white fs-4"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-white fs-4"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Our Location</h5>
+                    <div class="map-container rounded overflow-hidden" style="height: 150px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dYOUR_LATITUDE!2dYOUR_LONGITUDE!3dYOUR_ZOOM_LEVEL!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zYOUR_COMPANY_NAME_OR_LOCATION_NAME!5e0!3m2!1sen!2sin!4v1678901234567" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-light">
+            <div class="text-center">
+                <p>© 2025 Excellent Enviro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
