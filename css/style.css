@@ -1,0 +1,633 @@
+:root {
+    --white: #ffffff;
+    --dark-green: #1A4D2E; /* A deep, rich green, symbolizing nature and growth */
+    --light-green: #4F8A8B; /* A more muted, earthy green, symbolizing freshness */
+    --accent-green: #6AA84F; /* A brighter, vibrant green for accents */
+    --text-color: #333333;
+    --heading-color: var(--dark-green);
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter, subtle shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.12); /* Medium shadow for depth */
+    --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow for emphasis */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Requires Google Fonts link in HTML */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+
+    /* Main Background: Similar to Navbar background color */
+    background: linear-gradient(135deg, rgba(240, 253, 244, 0.98) 0%, rgba(230, 247, 234, 0.98) 100%); /* Soft, fresh gradient, slightly more opaque */
+    background-size: cover; /* Ensure background covers the entire viewport */
+    background-attachment: fixed; /* Keep background fixed when scrolling */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Requires Google Fonts link in HTML */
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+a {
+    color: var(--light-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-green);
+}
+
+/* Header Section */
+header {
+    /* Navbar Background: Kept consistent with the subtle gradient and blur */
+    background: linear-gradient(to right, rgba(240, 253, 244, 0.98), rgba(230, 247, 234, 0.98));
+    padding: 15px 0;
+    box-shadow: 0 6px 20px var(--shadow-medium);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26, 77, 46, 0.05);
+}
+
+.logo img {
+    max-width: 180px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Navbar Styling */
+.navbar-nav .nav-link {
+    color: var(--dark-green);
+    font-weight: 600;
+    margin: 0 10px; /* Slightly reduced margin */
+    padding: 8px 18px; /* Slightly reduced padding */
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem; /* Reduced text size for navbar items */
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--light-green);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--white);
+    background-color: var(--light-green);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px var(--shadow-light);
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    transform: translateX(0);
+}
+
+/* Aesthetic Dropdown specific styles */
+.navbar-nav .dropdown-menu {
+    background: var(--white);
+    border: none;
+    box-shadow: 0 15px 45px var(--shadow-strong);
+    border-radius: 12px;
+    padding: 10px 0;
+    animation: fadeInScale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 220px;
+    overflow: hidden;
+}
+
+.navbar-nav .dropdown-item {
+    color: var(--dark-green);
+    padding: 12px 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    white-space: normal;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: var(--accent-green);
+    color: var(--white);
+    transform: translateX(5px);
+    z-index: 1;
+    position: relative;
+}
+
+/* Multi-level Dropdown Styling */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: 10px;
+    animation: slideInRight 0.3s ease-out;
+    border-left: 3px solid var(--light-green);
+}
+
+/* Mobile Navbar adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+        border-top: 1px solid rgba(26, 77, 46, 0.05);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: .5rem;
+        box-shadow: 0 8px 25px var(--shadow-medium);
+    }
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        padding: 10px 15px; /* Adjust mobile padding */
+        text-align: left;
+        border-radius: .25rem;
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 1rem; /* Keep normal size for mobile */
+    }
+    .navbar-nav .nav-link::before {
+        display: none;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        transform: none;
+        box-shadow: none;
+    }
+    .dropdown-submenu > .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        margin-left: 25px;
+        border: 0;
+        box-shadow: none;
+        background-color: #f8f9fa;
+        border-left: none;
+    }
+    .dropdown-item {
+        padding-left: 35px !important;
+    }
+    .dropdown-submenu .dropdown-item {
+        padding-left: 50px !important;
+    }
+}
+
+/* Buttons */
+.btn-dark-green {
+    background-color: var(--dark-green);
+    color: var(--white);
+    border: 1px solid var(--dark-green);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-dark-green:hover {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.btn-light-green {
+    background-color: var(--light-green);
+    color: var(--white);
+    border: 1px solid var(--light-green);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-light-green:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.btn-outline-dark-green {
+    color: var(--dark-green);
+    border-color: var(--dark-green);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-outline-dark-green:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+
+/* Carousel Section */
+#heroCarousel .carousel-item img {
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+    border-radius: .5rem;
+}
+
+.carousel-caption {
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+    padding: 40px 30px 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    text-align: left;
+    border-radius: 0 0 .5rem .5rem;
+}
+
+.carousel-caption h5 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.carousel-caption p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    color: var(--white);
+    max-width: 70%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #heroCarousel .carousel-item img {
+        height: 350px;
+    }
+    .carousel-caption {
+        padding: 20px 15px 10px;
+    }
+    .carousel-caption h5 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}
+
+/* Description Section */
+.lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Service Cards */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 8px 25px var(--shadow-light);
+    border: 1px solid rgba(26, 77, 46, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px var(--shadow-medium);
+}
+
+.service-card img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 3px solid var(--light-green);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-card .card-body {
+    padding: 25px;
+}
+
+.service-card .card-title {
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+}
+
+.service-card .card-text {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 60px 0;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer h5 {
+    color: var(--accent-green);
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+}
+
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-green);
+    border-radius: 2px;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li:last-child {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+footer .fab {
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer .fab:hover {
+    color: var(--accent-green);
+    transform: scale(1.2);
+}
+
+.map-container {
+    border: 3px solid var(--light-green);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Tree Loading Animation */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tree-loader {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.tree-loader::before, .tree-loader::after {
+    content: '';
+    position: absolute;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    animation: treeGrow 2s ease-out infinite;
+    box-shadow: 0 0 20px rgba(106, 168, 79, 0.6);
+}
+
+.tree-loader::before {
+    width: 80px;
+    height: 80px;
+    top: 15px;
+    left: 35px;
+}
+
+.tree-loader::after {
+    width: 70px;
+    height: 70px;
+    top: 60px;
+    left: 70px;
+    animation-delay: 0.5s;
+}
+
+.tree-loader-stem {
+    position: absolute;
+    bottom: 0;
+    left: 67px;
+    width: 18px;
+    height: 50px;
+    background-color: #8B4513;
+    border-radius: 8px 8px 0 0;
+    transform-origin: bottom;
+    animation: stemRise 2s ease-out infinite;
+    z-index: 0;
+}
+
+@keyframes treeGrow {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes stemRise {
+    0% { transform: scaleY(0); }
+    50% { transform: scaleY(1.1); }
+    100% { transform: scaleY(1); }
+}
+
+/* General Page Content Styling (for other pages) */
+.page-header {
+    background: linear-gradient(45deg, var(--light-green), var(--dark-green));
+    color: var(--white);
+    padding: 80px 0;
+    margin-bottom: 50px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.content-section {
+    padding: 50px 0;
+}
+
+.content-section h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-green);
+    border-radius: 2px;
+}
+
+.content-section h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--light-green);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.list-group-item {
+    color: var(--text-color);
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    transition: all 0.2s ease;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item i {
+    font-size: 1.2rem;
+    width: 30px;
+    text-align: center;
+    color: var(--light-green);
+}
+
+.list-group-item:hover {
+    background-color: var(--light-green);
+    color: var(--white);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.list-group-item:hover i {
+    color: var(--white);
+}
+
+/* Custom Animations (for AOS) */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Scrollbar Styling (Optional, for aesthetics) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green);
+}
+
+.activity-section h3 {
+    color: #28a745; /* Darker green for headings */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.activity-section ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+.activity-section ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.activity-section ul li::before {
+    content: "\f00c"; /* Font Awesome checkmark icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #28a745; /* Green checkmark */
+    top: 5px;
+    font-size: 0.9em;
+}
